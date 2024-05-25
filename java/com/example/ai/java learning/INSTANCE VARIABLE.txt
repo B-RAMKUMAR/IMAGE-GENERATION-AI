@@ -1,0 +1,38 @@
+                          INSTANCE VARIABLE
+
+public class HelloWorld {
+    static int a=10;
+    int b;
+    public HelloWorld(int val){
+        b=val;
+    }
+    public void display(){
+        System.out.println(b);
+    }
+    public static void main(String[] args) {
+        System.out.println(a);
+        HelloWorld h = new HelloWorld(40);
+        h.display();
+    }
+}
+
+
+example:
+import java.util.*;
+public class Student{
+    int roll;
+    String name;
+    String mark;
+    public Student(int roll,String name,String mark){
+        this.roll=roll;
+        this.name=name;
+        this.mark=mark;
+    }
+    public void display(){
+        System.out.println("Roll No:"+roll+" Name:"+name+" Mark:"+mark);
+    }
+    public static void main(String[] args){
+        Student st=new Student(14051,"RAJ","40");
+        st.display();
+    }
+}

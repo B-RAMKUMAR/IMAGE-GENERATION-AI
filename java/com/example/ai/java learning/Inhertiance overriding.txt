@@ -1,0 +1,42 @@
+/*
+
+        ****************************************
+                    INHERITANCE-Overriding
+        ******************************************
+
+*/
+class Interest{
+    public static void main(String args[]){
+        Sbi s=new Sbi();
+        Candrea c=new Candrea();
+        System.out.println("Interset sbi:"+s.getInterest()+"%");
+    }
+}
+
+class bank{
+    int getInterest(){
+        return 0;
+    }
+}
+class Sbi extends bank{
+// this extends function override of parrent function and retuen the 
+// oitput from childclass
+    int getInterest(){
+        return 2;
+    }
+}
+class Icic extends bank{
+    int getInterest(){
+        return 4;
+    }
+}
+class Candrea extends bank{
+    int getInterest(){
+        return 8;
+    }
+}
+class AndraBank extends bank{
+    int getInterest(){
+        return 7;
+    }
+}

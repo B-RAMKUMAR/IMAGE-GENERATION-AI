@@ -1,0 +1,143 @@
+                    //////AGGREGATION
+                    
+                    
+                    //RELATE BETWEEN TWO CLASS
+                    
+                    //..#######SYNATX::PUBLIC ADDRESS address;
+                                        //address.city
+class HelloWorld {
+    public static void main(String[] args) {
+    Address ad=new Address(13,"kabilar","chennai","odisa");
+    employee ep=new employee(1201,"raj kamal",ad);
+    }
+}
+class Address{
+    int Dno;
+    String street;
+    String city;
+    String District;
+    public Address(int Dno,String street,String city,String District){
+    this.Dno=Dno;
+    this.street=street;
+    this.city=city;
+    this.District=District;
+    }
+}
+class employee{
+    int eno;
+    String ename;
+    public Address address;
+    public employee(int eno,String ename,Address address){
+        this.eno=eno;
+        this.ename=ename;
+        this.address=address;
+        System.out.println(eno+ename+address.Dno+address.District);
+    }
+}
+
+
+////////////////////////////////////////////////////////
+
+
+part 2
+
+
+import java.util.List;
+import java.util.ArrayList;
+class helloworld{
+    public static void main(String args[]){
+        Student st1=new Student(55,"ajay");
+        Teacher t1=new Teacher("Mr Pone");
+        School s=new School();
+        s.addStudent(st1);
+        s.addTeachers(t1);
+        t1.addStu(st1);
+        t1.display();
+    }
+}
+class School{
+    List <Student> students;
+    List <Teacher> teachers;
+    public School(){
+       students=new ArrayList<>();
+       teachers=new ArrayList<>();
+    }
+    public void addStudent(Student st){
+        students.add(st);
+    }
+    public void addTeachers(Teacher t){
+        teachers.add(t);
+    }
+}
+class Teacher{
+    String name;
+    List<Student> students;
+    public Teacher(String name){
+        this.name=name;
+        students=new ArrayList<>();
+    }
+    public void addStu(Student st){
+        students.add(st);
+    }
+    public void display(){
+        for(Student st:students){
+            System.out.print(st.getname());
+        }
+    }
+}
+class Student{
+    String name;
+    public Student(int rollno,String name){
+        this.name=name;
+    }
+    public String getname(){
+        return name;
+    }
+}
+
+
+
+
+
+////////////////////////////part3
+
+import java.util.List;
+import java.util.ArrayList;
+class Helloworld{
+public static void main(String[] args){
+        
+        Library l=new Library();
+        Book b=new Book("hi","jai");
+        l.addbook(b);
+        l.display();
+    }
+}
+class Library {
+    List<Book> books;
+    
+    public Library(){
+        books=new ArrayList<>();
+    }
+    public void addbook(Book book){
+          books.add(book);     
+    }
+    public void display(){
+        for(Book book:books){
+            System.out.print(book.getTitle()+book.getAuthor());
+        }
+    }
+}
+class Book{
+    private String title;
+    private String author;
+    public Book(String title, String author){
+        this.title=title;
+        this.author=author;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public String getAuthor(){
+        return author;
+    }
+}
